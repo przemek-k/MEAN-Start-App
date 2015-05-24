@@ -1,0 +1,5 @@
+.panel.panel-primary
+    .panel-heading.text-center Featured Articles
+    .panel-body
+        .row(ng-repeat="article in articles | filter:{featured:true}")
+            .col-md-12 {{article.title}}

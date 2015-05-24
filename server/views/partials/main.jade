@@ -1,2 +1,10 @@
-h1 This is a partial
-h2 {{myVar}}
+.container
+    .jumbotron
+        h1 Hello, world!
+        p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+
+    .row
+        .col-md-6
+            div(ng-include="'/partials/featured-articles'")
+        .col-md-6
+            div(ng-include="'/partials/new-articles'")

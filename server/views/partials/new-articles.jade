@@ -1,0 +1,6 @@
+.panel.panel-primary
+    .panel-heading.text-center New Articles
+    .panel-body
+        .row(ng-repeat="article in articles | orderBy:'published':true | limitTo:10")
+            .col-md-3 {{article.published | date: 'MMM d'}}
+            .col-md-9 {{article.title}}

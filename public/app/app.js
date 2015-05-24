@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app', ['ngResource', 'ngRoute']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
@@ -12,7 +14,3 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
             })
     }
 );
-
-angular.module('app').controller('MainCtrl', function($scope) {
-    $scope.myVar = 'Hello Angular';
-});
