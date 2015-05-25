@@ -3,3 +3,4 @@ node_modules/
 public/vendor/
 **/*.html
 **/*.css
+npm-debug.log
