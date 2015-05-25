@@ -4,9 +4,10 @@ block main-content
     nav(class="navbar navbar-default navbar-fixed-top")
         div(class="container-fluid")
             div(class="navbar-header")
-                a(class="navbar-brand" href="/") MEAN Start App
+                a(class="navbar-brand" href="/") MEAN Blog
+            div(ng-include="'partials/account/navbar-login'")
     section.content
         div(ng-view)
 
     footer.container.text-center
-        p &copy; 2015 MEAN Start App
+        p &copy; 2015 MEAN Blog

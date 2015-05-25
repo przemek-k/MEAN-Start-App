@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('MainCtrl', function($scope) {
+angular.module('app').controller('MainController', function($scope) {
     $scope.articles = [
         {title: 'Article Title #1', featured: true, published: new Date("October 13, 2014 11:13:00")},
         {title: 'Article Title #2', featured: false, published: new Date("October 14, 2014 11:13:00")},

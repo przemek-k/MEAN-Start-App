@@ -1,1 +1,1 @@
-# MEAN-Start-App
+# mean-blog-app
