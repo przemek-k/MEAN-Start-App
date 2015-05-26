@@ -1,8 +1,13 @@
 'use strict';
 
-angular.module('app').controller('NavbarLoginController', function($scope) {
+angular.module('app').controller('NavbarLoginController', function($scope, $http) {
 
     $scope.signin = function (user) {
-        console.log("I'm not done yet");
+        $http.post('/login', {
+            username: user.username,
+            password: user.password
+        }).then(function(resp) {
+            resp.data.success ? console.log('User logged in!') : console.log('Failed to login');
+        });
     };
 });
