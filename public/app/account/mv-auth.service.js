@@ -2,13 +2,13 @@
 
 angular.module('app').factory('mvAuth', function($http, mvIdentity, $q) {
     return {
-        authenticateUser: function(user) {
+        authenticateUser: function(username, password) {
 
             var dfd = $q.defer();
 
             $http.post('/login', {
-                username: user.username,
-                password: user.password
+                username: username,
+                password: password
             }).then(function(resp) {
                 if(resp.data.success) {
                     mvIdentity.currentUser = resp.data.user;
