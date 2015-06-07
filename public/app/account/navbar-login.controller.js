@@ -10,8 +10,8 @@ angular.module('app').controller('NavbarLoginController', function($scope, $http
                 mvNotifier.success('You have successfully signed in!');
             } else {
                 mvNotifier.error('Username/Password combination incorrect');
-                username = "";
-                password = "";
+                $scope.username = "";
+                $scope.password = "";
             }
         });
     };

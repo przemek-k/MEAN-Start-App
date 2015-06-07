@@ -15,8 +15,14 @@ User = mongoose.model('User');
 passport.use(new LocalStrategy(
     function(username, password, done) {
         User.findOne({username: username}).exec(function(err, user) {
-            if(user) {
-                return done(null, user);
+            var userData = {
+                _id: user._id,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                username: user.username
+            };
+            if(user && user.authenticate(password)) {
+                return done(null, userData);
             } else {
                 return done(null, false);
             }
