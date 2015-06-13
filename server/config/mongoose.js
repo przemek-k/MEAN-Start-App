@@ -9,7 +9,7 @@ module.exports = function (config) {
 
     db.on('error', console.error.bind(console, 'db connection error..'));
     db.once('open', function () {
-        console.log('Connection to startapp database opened');
+        console.log('Connection to MEAN Blog App database opened');
     });
 
     userSchema = mongoose.Schema({
