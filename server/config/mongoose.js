@@ -17,7 +17,8 @@ module.exports = function (config) {
         lastName: String,
         username: String,
         salt: String,
-        hashed_pwd: String
+        hashed_pwd: String,
+        roles: [String]
     });
     userSchema.methods = {
         authenticate: function(pwdToMatch) {
@@ -37,7 +38,8 @@ module.exports = function (config) {
                 lastName: 'Kalka',
                 username: 'pkalka',
                 salt: salt,
-                hashed_pwd: hash
+                hashed_pwd: hash,
+                roles: ['admin']
             });
             salt = createSalt();
             hash = hashPwd(salt, 'tcoyote');
@@ -46,7 +48,8 @@ module.exports = function (config) {
                 lastName: 'Coyote',
                 username: 'tcoyote',
                 salt: salt,
-                hashed_pwd: hash
+                hashed_pwd: hash,
+                roles: []
             });
             salt = createSalt();
             hash = hashPwd(salt, 'mspectre');
@@ -55,7 +58,8 @@ module.exports = function (config) {
                 lastName: 'Spectre',
                 username: 'mspectre',
                 salt: salt,
-                hashed_pwd: hash
+                hashed_pwd: hash,
+                roles: []
             });
         }
     });

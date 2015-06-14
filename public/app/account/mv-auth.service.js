@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('mvAuth', function($http, mvIdentity, $q) {
+angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser) {
     return {
         authenticateUser: function(username, password) {
 
@@ -11,7 +11,9 @@ angular.module('app').factory('mvAuth', function($http, mvIdentity, $q) {
                 password: password
             }).then(function(resp) {
                 if(resp.data.success) {
-                    mvIdentity.currentUser = resp.data.user;
+                    var user = new mvUser();
+                    angular.extend(user, resp.data.user);
+                    mvIdentity.currentUser = user;
                     dfd.resolve(true);
                 } else {
                     dfd.resolve(false);
